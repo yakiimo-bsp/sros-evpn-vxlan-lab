@@ -6,5 +6,5 @@
 
 # configuration
 - topology: Spine-Leaf
-- underlay: iBGP with OPSF
+- underlay: iBGP with OSPF
 - overlay: EVPN-VXLAN
