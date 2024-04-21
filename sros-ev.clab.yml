@@ -1,4 +1,4 @@
-name: nokia-lab
+name: ev
 prefix: ""
 
 topology:
@@ -15,29 +15,29 @@ topology:
 
   nodes:
     p1:
-      startup-config: p1.partial.cfg
+      startup-config: ./config/p1.partial.cfg
       group: spine
 
     p2:
-      startup-config: p2.partial.cfg
+      startup-config: ./config/p2.partial.cfg
       group: spine
 
     pe1:
-      startup-config: pe1.partial.cfg
+      startup-config: ./config/pe1.partial.cfg
       group: leaf
 
     pe2:
-      startup-config: pe2.partial.cfg
+      startup-config: ./config/pe2.partial.cfg
       group: leaf
 
     pe3:
-      startup-config: pe3.partial.cfg
+      startup-config: ./config/pe3.partial.cfg
       group: leaf
 
     ce1:
       kind: linux
       binds:
-        - ./ce1.sh:/tmp/eth1.sh
+        - ./config/ce1.sh:/tmp/eth1.sh
       env:
         PS1: '\h:\w\$ '
       exec:
@@ -50,7 +50,7 @@ topology:
     ce2:
       kind: linux
       binds:
-        - ./ce2.sh:/tmp/eth1.sh
+        - ./config/ce2.sh:/tmp/eth1.sh
       env:
         PS1: '\h:\w\$ '
       exec:
@@ -63,7 +63,7 @@ topology:
     ce3:
       kind: linux
       binds:
-        - ./ce3.sh:/tmp/eth1.sh
+        - ./config/ce3.sh:/tmp/eth1.sh
       env:
         PS1: '\h:\w\$ '
       exec:
@@ -76,7 +76,7 @@ topology:
     ce4:
       kind: linux
       binds:
-        - ./ce4.sh:/tmp/eth1.sh
+        - ./config/ce4.sh:/tmp/eth1.sh
       env:
         PS1: '\h:\w\$ '
       exec:
