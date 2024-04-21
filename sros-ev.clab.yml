@@ -44,7 +44,6 @@ topology:
         - bash /tmp/eth1.sh
         - ip link set eth1.10 address 00:00:00:00:11:11
         - ip a add 192.168.10.1/24 dev eth1.10
-        - export PS1='\h:\w\$ '
       group: server
 
     ce2:
@@ -57,7 +56,6 @@ topology:
         - bash /tmp/eth1.sh
         - ip link set eth1.10 address 00:00:00:00:22:22
         - ip a add 192.168.10.2/24 dev eth1.10
-        - export PS1='\h:\w\$ '
       group: server
 
     ce3:
@@ -70,7 +68,6 @@ topology:
         - bash /tmp/eth1.sh
         - ip link set eth1.20 address 00:00:00:00:33:33
         - ip a add 192.168.20.3/24 dev eth1.20
-        - export PS1='\h:\w\$ '
       group: server
 
     ce4:
@@ -83,7 +80,6 @@ topology:
         - bash /tmp/eth1.sh
         - ip link set eth1.20 address 00:00:00:00:44:44
         - ip a add 192.168.20.4/24 dev eth1.20
-        - export PS1='\h:\w\$ '
       group: server
 
   links:
