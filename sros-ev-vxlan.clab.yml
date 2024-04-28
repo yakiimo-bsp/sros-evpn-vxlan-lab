@@ -1,0 +1,95 @@
+name: sros-ev-vxlan
+prefix: ""
+
+topology:
+  defaults:
+    kind: vr-sros
+    type: sr-1e
+
+  kinds:
+    vr-sros:
+      image: ${IMAGE_REPO}vrnetlab/vr-sros:23.10.R1
+      license: license.txt # Not included in the lab, ask your Nokia representative
+    linux:
+      image: ghcr.io/hellt/network-multitool
+
+  nodes:
+    p1:
+      startup-config: ./configs/p1.partial.cfg
+      group: spine
+
+    p2:
+      startup-config: ./configs/p2.partial.cfg
+      group: spine
+
+    pe1:
+      startup-config: ./configs/pe1.partial.cfg
+      group: leaf
+
+    pe2:
+      startup-config: ./configs/pe2.partial.cfg
+      group: leaf
+
+    pe3:
+      startup-config: ./configs/pe3.partial.cfg
+      group: leaf
+
+    ce1:
+      kind: linux
+      binds:
+        - ./configs/ce1.sh:/tmp/eth1.sh
+      env:
+        PS1: '\h:\w\$ '
+      exec:
+        - bash /tmp/eth1.sh
+        - ip link set eth1.10 address 00:00:00:00:11:11
+        - ip a add 192.168.10.1/24 dev eth1.10
+      group: server
+
+    ce2:
+      kind: linux
+      binds:
+        - ./configs/ce2.sh:/tmp/eth1.sh
+      env:
+        PS1: '\h:\w\$ '
+      exec:
+        - bash /tmp/eth1.sh
+        - ip link set eth1.10 address 00:00:00:00:22:22
+        - ip a add 192.168.10.2/24 dev eth1.10
+      group: server
+
+    ce3:
+      kind: linux
+      binds:
+        - ./configs/ce3.sh:/tmp/eth1.sh
+      env:
+        PS1: '\h:\w\$ '
+      exec:
+        - bash /tmp/eth1.sh
+        - ip link set eth1.20 address 00:00:00:00:33:33
+        - ip a add 192.168.20.3/24 dev eth1.20
+      group: server
+
+    ce4:
+      kind: linux
+      binds:
+        - ./configs/ce4.sh:/tmp/eth1.sh
+      env:
+        PS1: '\h:\w\$ '
+      exec:
+        - bash /tmp/eth1.sh
+        - ip link set eth1.20 address 00:00:00:00:44:44
+        - ip a add 192.168.20.4/24 dev eth1.20
+      group: server
+
+  links:
+    - endpoints: ["p1:eth1", "pe1:eth1"]
+    - endpoints: ["p1:eth2", "pe2:eth1"]
+    - endpoints: ["p1:eth3", "pe3:eth1"]
+    - endpoints: ["p2:eth1", "pe1:eth2"]
+    - endpoints: ["p2:eth2", "pe2:eth2"]
+    - endpoints: ["p2:eth3", "pe3:eth2"]
+    - endpoints: ["pe1:eth10", "ce1:eth1"]
+    - endpoints: ["pe2:eth10", "ce2:eth1"]
+    - endpoints: ["pe2:eth11", "ce3:eth1"]
+    - endpoints: ["pe3:eth10", "ce4:eth1"]
