@@ -15,29 +15,29 @@ topology:
 
   nodes:
     p1:
-      startup-config: ./config/p1.partial.cfg
+      startup-config: ./configs/p1.partial.cfg
       group: spine
 
     p2:
-      startup-config: ./config/p2.partial.cfg
+      startup-config: ./configs/p2.partial.cfg
       group: spine
 
     pe1:
-      startup-config: ./config/pe1.partial.cfg
+      startup-config: ./configs/pe1.partial.cfg
       group: leaf
 
     pe2:
-      startup-config: ./config/pe2.partial.cfg
+      startup-config: ./configs/pe2.partial.cfg
       group: leaf
 
     pe3:
-      startup-config: ./config/pe3.partial.cfg
+      startup-config: ./configs/pe3.partial.cfg
       group: leaf
 
     ce1:
       kind: linux
       binds:
-        - ./config/ce1.sh:/tmp/eth1.sh
+        - ./configs/ce1.sh:/tmp/eth1.sh
       env:
         PS1: '\h:\w\$ '
       exec:
@@ -49,7 +49,7 @@ topology:
     ce2:
       kind: linux
       binds:
-        - ./config/ce2.sh:/tmp/eth1.sh
+        - ./configs/ce2.sh:/tmp/eth1.sh
       env:
         PS1: '\h:\w\$ '
       exec:
@@ -61,7 +61,7 @@ topology:
     ce3:
       kind: linux
       binds:
-        - ./config/ce3.sh:/tmp/eth1.sh
+        - ./configs/ce3.sh:/tmp/eth1.sh
       env:
         PS1: '\h:\w\$ '
       exec:
@@ -73,7 +73,7 @@ topology:
     ce4:
       kind: linux
       binds:
-        - ./config/ce4.sh:/tmp/eth1.sh
+        - ./configs/ce4.sh:/tmp/eth1.sh
       env:
         PS1: '\h:\w\$ '
       exec:
