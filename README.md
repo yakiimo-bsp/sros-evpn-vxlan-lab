@@ -1,11 +1,12 @@
-# sros-evpn-vxlan-lab
+# Nokia SR OS EVPN-VXLAN Lab
 ![Topology](topology.png)
 
-# environment
-- version: TiMOS-C-23.10.R1 cpm/x86_64 Nokia 7750 SR
+# Tested environment
+- SR OS: 23.10.R1
 
-# configuration
-- topology: Spine-Leaf
-- underlay: iBGP with OSPF
-- overlay: EVPN-VXLAN
-- bum: Ingress Replication
+# Configuration
+- Topology: Spine-leaf
+- Underlay: iBGP with OSPF
+- Overlay: EVPN-VXLAN
+- BUM: Ingress Replication
+- Others: BFD, ECMP
