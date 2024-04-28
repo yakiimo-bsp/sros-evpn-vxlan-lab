@@ -1,8 +1,8 @@
-# Nokia SR OS EVPN-VXLAN Lab
+# Nokia SR OS EVPN over VXLAN Lab
 
 | Items | Description |
 | --- | --- |
-| Description | A lab to demonstrate EVPN-VXLAN on Nokia SR OS with containerlab |
+| Description | A lab to demonstrate EVPN over VXLAN on Nokia SR OS with containerlab |
 | Components | Nokia SR OS, Multitool Alpine Linux |
 | Resource requirements | N/A |
 | Topology file | sros-ev-vxlan.clab.yml |
@@ -18,7 +18,7 @@ CE1 and CE2 are assigned to VLAN 10, CE3 and CE4 are assigned to VLAN 20, and th
 
 - Topology: Clos
 - Underlay: iBGP with OSPF
-- Overlay: EVPN-VXLAN
+- Overlay: EVPN over VXLAN
 - BUM: Ingress Replication
 - Others: BFD, ECMP
 - Client: VLAN10, VLAN20
@@ -26,7 +26,7 @@ CE1 and CE2 are assigned to VLAN 10, CE3 and CE4 are assigned to VLAN 20, and th
 ![Topology](images/topology.png)
 
 # Use cases
-This lab allows you to launch a basic interoperability scenario for a multi-tenant environment on EVPN-VXLAN using the Nokia SR OS.
+This lab allows you to launch a basic interoperability scenario for a multi-tenant environment on EVPN over VXLAN using the Nokia SR OS.
 The lab directory contains the basic configuration files used to start the interoperability demonstration.
 
 # Parameters
