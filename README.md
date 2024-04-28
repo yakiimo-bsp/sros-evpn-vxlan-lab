@@ -8,3 +8,4 @@
 - topology: Spine-Leaf
 - underlay: iBGP with OSPF
 - overlay: EVPN-VXLAN
+- bum: Ingress Replication
