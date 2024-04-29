@@ -1,5 +1,4 @@
 # Nokia SR OS EVPN over VXLAN Lab
-
 | Items | Description |
 | --- | --- |
 | Description | A lab to demonstrate EVPN over VXLAN on Nokia SR OS with containerlab |
@@ -30,17 +29,17 @@ This lab allows you to launch a basic interoperability scenario for a multi-tena
 The lab directory contains the basic configuration files used to start the interoperability demonstration.
 
 # Parameters
-| Role | Hostname | IP address | VLAN |
-| --- | --- | --- | --- |
-| Spine | P1 | 10.0.0.1 | |
-| Spine | P2 | 10.0.0.2 | |
-| Leaf | PE1 | 10.0.0.11 | |
-| Leaf | PE2 | 10.0.0.12 | |
-| Leaf | PE3 | 10.0.0.13 | |
-| Client | CE1 | 192.168.10.1 | 10 |
-| Client | CE2 | 192.168.10.2 | 10 |
-| Client | CE3 | 192.168.20.3 | 20 |
-| Client | CE4 | 192.168.20.4 | 20 |
+| Role | Image | Hostname | IP address | VLAN |
+| --- | --- | --- | --- | --- |
+| Spine | SR OS | P1 | 10.0.0.1 | |
+| Spine | SR OS | P2 | 10.0.0.2 | |
+| Leaf | SR OS | PE1 | 10.0.0.11 | |
+| Leaf | SR OS | PE2 | 10.0.0.12 | |
+| Leaf | SR OS | PE3 | 10.0.0.13 | |
+| Client | Alpine Linux | CE1 | 192.168.10.1 | 10 |
+| Client | Alpine Linux | CE2 | 192.168.10.2 | 10 |
+| Client | Alpine Linux | CE3 | 192.168.20.3 | 20 |
+| Client | Alpine Linux | CE4 | 192.168.20.4 | 20 |
 
 # Outputs
 ```
